@@ -1,15 +1,15 @@
 import { useState } from 'react';
 import './Message.css';
 
-const Message = ({ 
-    message, 
-    isOwnMessage, 
+const Message = ({
+    message,
+    isOwnMessage,
     theme,
     onReaction,
-    username 
+    username
     }) => {
     const [showReactionPicker, setShowReactionPicker] = useState(false);
-    const [reactions, setReactions] = useState(message.reactions || {});
+    const reactions = message.reactions || {};
 
     const colors = theme === 'dark' ? {
         messageBg: 'bg-gray-800',
