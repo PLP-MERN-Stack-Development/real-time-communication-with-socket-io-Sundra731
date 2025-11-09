@@ -1,0 +1,47 @@
+/* Message Input Component Styles */
+
+textarea {
+    font-family: inherit;
+    line-height: 1.5;
+}
+
+textarea:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Auto-resize textarea */
+textarea {
+    overflow-y: auto;
+    transition: height 0.2s ease;
+}
+
+/* File preview animation */
+.file-preview {
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Send button pulse when enabled */
+button[type="submit"]:not(:disabled) {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+    }
+}
